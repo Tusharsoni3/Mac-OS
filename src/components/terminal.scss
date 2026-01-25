@@ -9,9 +9,9 @@
       font-family: 'SF Mono', monospace;
 
       .top-bar {
-         height: 35px; // Reduced height for a sleeker macOS look
+         height: 35px; 
          display: flex;
-         justify-content: space-between; // Pushes title left, icon right
+         justify-content: space-between; 
          align-items: center;
          padding: 12px 12px ;
          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -32,14 +32,11 @@
            .gear-svg {
              width: 16px;
              height: 16px;
-             transition: transform 0.5s ease; // Smooth rotation
+             transition: transform 0.5s ease; 
            }
 
            &:hover {
-             color: #fff; // Icon turns white on hover
-             .gear-svg {
-               transform: rotate(90deg); // The "Settings" spin effect
-             }
+             color: #fff; 
            }
          }
       }

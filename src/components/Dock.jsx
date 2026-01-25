@@ -3,8 +3,6 @@ import './dock.scss'
 
 const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
 
-    // This array is technically unused in your current render, 
-    // but I kept it here as requested to preserve content.
     const dockItems = [
     { id: 'github', icon: '/icons/github.png', name: 'Github' },
     { id: 'cli', icon: '/icons/terminal.png', name: 'Terminal' },
@@ -12,7 +10,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
     { id: 'notes', icon: '/icons/notes.png', name: 'Notes' },
     { id: 'spotify', icon: '/icons/spotify.png', name: 'Spotify' },
     { id: 'linkedin', icon: '/icons/linkedin.png', name: 'LinkedIn' },
-    { id: 'mail', icon: '/icons/Mail.png', name: 'Mail' },
+    { id: 'mail', icon: '/icons/mail.png', name: 'Mail' },
     { id: 'about', icon: '/icons/profile.png', name: 'About' },
     { id: 'settings', icon: '/icons/Settings.png', name: 'Settings' },
     { id: 'twitter', icon: '/icons/twitter.png', name: 'Twitter' },
@@ -25,7 +23,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
       {/* 1. Github */}
       <div className='icon' onClick={() => window.open("https://github.com/Tusharsoni3", "_blank")}>
         <span className="dock-tooltip">Github</span>
-        <img src="/icons png/github.png" alt="Github" />
+        <img src="/icons-png /github.png" alt="Github" />
       </div>
 
       {/* 2. Calendar */}
@@ -35,7 +33,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
           setMinimizedWindows(s => ({...s, calendar: false}))
         }}>
         <span className="dock-tooltip">Calendar</span>
-        <img src="/icons png/calender.png" alt="Calender" />
+        <img src="/icons-png/calendar.png" alt="Calendar" />
       </div>
 
       {/* 3. LinkedIn */}
@@ -43,7 +41,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
         onClick={() => window.open("https://www.linkedin.com/in/tushar-soni-007613277/", '_blank')}
       >
         <span className="dock-tooltip">LinkedIn</span>
-        <img src="/icons png/linkedin.png" alt="Linkedin" />
+        <img src="/icons-png/linkedin.png" alt="Linkedin" />
       </div>
 
       {/* 4. Profile / About */}
@@ -56,7 +54,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
           setMinimizedWindows(s => ({...s,  Terminal: false}))
         }}>
         <span className="dock-tooltip">Terminal</span>
-        <img src="/icons png/terminal.png" alt="Terminal" />
+        <img src="/icons-png/terminal.png" alt="Terminal" />
         {windowsState.Terminal && <div className="dot"></div>}
       </div>
 
@@ -67,14 +65,14 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
           setMinimizedWindows(s => ({...s, spotify: false}))
         }}>
         <span className="dock-tooltip">Spotify</span>
-        <img src="/icons png/spotify.png" alt="Spotify" />
+        <img src="/icons-png/spotify.png" alt="Spotify" />
         {windowsState.spotify && <div className="dot"></div>}
       </div>
 
       {/* 7. Mail */}
       <div className='icon' onClick={() => window.open("mailto:tstsuhar342@gmail.com",'_blank')}>
         <span className="dock-tooltip">Mail</span>
-        <img src="/icons png/mail.png" alt="Mail" />
+        <img src="/icons-png/mail.png" alt="Mail" />
       </div>
 
       {/* 8. Notes */}
@@ -84,19 +82,19 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
           setMinimizedWindows(s => ({...s, notes: false}))
         }}>
         <span className="dock-tooltip">Notes</span>
-        <img src="/icons png/notes.png" alt="Notes" />
+        <img src="/icons-png/notes.png" alt="Notes" />
       </div>
 
       {/* 9. Settings */}
       <div className='icon'>
         <span className="dock-tooltip">Settings</span>
-        <img src="/icons png/Settings.png" alt="Settings" />
+        <img src="/icons-png/Settings.png" alt="Settings" />
       </div>
 
       {/* 10. Twitter */}
       <div className='icon' onClick={() => window.open("https://x.com/TusharSenp55985",'_blank')}>
         <span className="dock-tooltip">Twitter</span>
-        <img src="/icons png/twitter.png" alt="Twitter" />
+        <img src="/icons-png/twitter.png" alt="Twitter" />
       </div>
 
        {/* 11. About ME */}
@@ -106,7 +104,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
           setMinimizedWindows(s => ({...s, aboutme: false}))
         }}>
         <span className="dock-tooltip">About Me</span>
-        <img src="/icons png/profile.png" alt="profile" />
+        <img src="/icons-png/profile.png" alt="profile" />
       </div>
 
     </footer>

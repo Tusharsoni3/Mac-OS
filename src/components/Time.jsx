@@ -10,7 +10,7 @@ const Time = () => {
     }, []);
 
     const formatOptions = {
-        weekday: 'long', // Changed from 'short' to 'long'
+        weekday: 'long', 
         day: 'numeric',
         month: 'short',
         hour: 'numeric',
@@ -19,7 +19,7 @@ const Time = () => {
     };
 
     const formattedDate = date.toLocaleString('en-GB', formatOptions)
-        .replace(',', '') // Remove default comma
+        .replace(',', '') 
         .replace('at', '');
 
     return (

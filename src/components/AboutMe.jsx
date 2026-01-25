@@ -6,7 +6,7 @@ import './aboutme.scss';
 const AboutMe = ({ windowsName, setWindowsState, isMinimized, setMinimizedWindows }) => {
   
   const profile = {
-    name: "TUSHAR SONI", // Caps look better in Bungee Hairline
+    name: "TUSHAR SONI", 
     role: "Full Stack Developer &  Linux Enthusiast",
     bio: "I'm a college student passionate about building tools that solve real problems."
   };
@@ -34,7 +34,7 @@ const AboutMe = ({ windowsName, setWindowsState, isMinimized, setMinimizedWindow
       setWindowsState={setWindowsState}
       isMinimized={isMinimized}
       setMinimizedWindows={setMinimizedWindows}
-      initialWidth="900px" // Thoda wider kiya split layout ke liye
+      initialWidth="900px" 
       initialHeight="650px"
     >
       <div className="about-container">

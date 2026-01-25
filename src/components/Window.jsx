@@ -26,7 +26,7 @@ const Window = ({
   const [preMaximizeState, setPreMaximizeState] = useState(null);
   
   const handleMinimized = (e) => {
-    e.stopPropagation(); // FIX: Added brackets () to execute function
+    e.stopPropagation(); 
     setMinimizedWindows(prev => ({...prev, [windowsName]: true}));
   }
 
@@ -77,7 +77,7 @@ const Window = ({
           <div className='dots'>
 
             <div className='dot red'
-              onClick={(e) => { // Wrapper function for cleaner logic
+              onClick={(e) => { 
                 e.stopPropagation();
                 setWindowsState(state => ({ ...state, [windowsName]: false }));
               }}

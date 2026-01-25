@@ -1,11 +1,10 @@
 /* Import Aesthetic Font */
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
 
-/* Aesthetic Color Palette */
-$bg-dark: #101010;       /* Deep Black */
-$card-bg: #1a1a1a;       /* Dark Grey */
-$accent: #f0e6d2;        /* Champagne / Soft Beige (Aesthetic Text) */
-$highlight: #d4af37;     /* Muted Gold (For borders/icons) */
+$bg-dark: #101010;      
+$card-bg: #1a1a1a;       
+$accent: #f0e6d2;        
+$highlight: #d4af37;     
 $text-muted: #888888;
 
 .about-container {
@@ -13,8 +12,8 @@ $text-muted: #888888;
   height: 100%;
   background-color: $bg-dark;
   color: $accent;
-  font-family: 'Bungee Hairline', sans-serif; /* Apply Font */
-  font-weight: bold; /* Bungee Hairline needs bold to be readable usually */
+  font-family: 'Bungee Hairline', sans-serif; 
+  font-weight: bold; 
   display: flex;
   flex-direction: column;
   overflow: hidden;
