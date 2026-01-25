@@ -39,7 +39,7 @@ Happy exploring! 🚀
     contact: { fn: () => `Email: tusharsoni8908@gmail.com\nPhone: 8853303990\nLocation: prayagraj UP` },
     github: { fn: () => { window.open('https://github.com/Tusharsoni3', '_blank'); return 'Opening GitHub...'; } },
     resume: { fn: () => 'Resume download started...' },
-    social: { fn: () => `Twitter: @TusharSoni\nLinkedIn: /in/TusharSoni\nPortfolio: tusharSoni.dev` },
+    social: { fn: () => `Twitter: @TusharSoni\nLinkedIn: /in/TusharSoni\n` },
     echo: { fn: (...args) => args.join(' ') },
     help: {
     fn: () => `
