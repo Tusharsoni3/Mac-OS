@@ -23,7 +23,7 @@ const Dock = ({ windowsState, setWindowsState, setMinimizedWindows }) => {
       {/* 1. Github */}
       <div className='icon' onClick={() => window.open("https://github.com/Tusharsoni3", "_blank")}>
         <span className="dock-tooltip">Github</span>
-        <img src="/icons-png /github.png" alt="Github" />
+        <img src="/icons-png/github.png" alt="Github" />
       </div>
 
       {/* 2. Calendar */}
