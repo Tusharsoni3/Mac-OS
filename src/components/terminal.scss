@@ -1,0 +1,79 @@
+
+.windows {
+  .main-content {
+    .console {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      color: #32d74b; 
+      font-family: 'SF Mono', monospace;
+
+      .top-bar {
+         height: 35px; // Reduced height for a sleeker macOS look
+         display: flex;
+         justify-content: space-between; // Pushes title left, icon right
+         align-items: center;
+         padding: 12px 12px ;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+         .terminal-title {
+           font-size: 12px;
+           color: #aaa;
+           user-select: none;
+         }
+
+         .settings-wrapper {
+           display: flex;
+           align-items: center;
+           color: #888;
+           cursor: pointer;
+           transition: color 0.2s ease;
+
+           .gear-svg {
+             width: 16px;
+             height: 16px;
+             transition: transform 0.5s ease; // Smooth rotation
+           }
+
+           &:hover {
+             color: #fff; // Icon turns white on hover
+             .gear-svg {
+               transform: rotate(90deg); // The "Settings" spin effect
+             }
+           }
+         }
+      }
+
+      .terminal-body {
+        padding: 15px;
+        flex-grow: 1;
+        background-color: transparent;
+        overflow-y: auto; 
+  display: block; // Ensures it behaves as a scrollable block
+
+  /* Optional: macOS thin scrollbar style */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+        .terminal-line {
+  /* This prevents spaces and newlines from collapsing */
+  white-space: pre-wrap; 
+  
+  /* Ensures long lines don't break the layout */
+  word-break: break-all; 
+  
+  /* Ensures the ASCII art aligns perfectly by using equal-width letters */
+  font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; 
+  
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+/* Import Aesthetic Font */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');
+
+/* Aesthetic Color Palette */
+$bg-dark: #101010;       /* Deep Black */
+$card-bg: #1a1a1a;       /* Dark Grey */
+$accent: #f0e6d2;        /* Champagne / Soft Beige (Aesthetic Text) */
+$highlight: #d4af37;     /* Muted Gold (For borders/icons) */
+$text-muted: #888888;
+
+.about-container {
+  width: 100%;
+  height: 100%;
+  background-color: $bg-dark;
+  color: $accent;
+  font-family: 'Bungee Hairline', sans-serif; /* Apply Font */
+  font-weight: bold; /* Bungee Hairline needs bold to be readable usually */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* MAIN SCROLL AREA */
+  .scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+    
+    /* Clean Scrollbar */
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-thumb { background: $highlight; border-radius: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+
+    /* --- 1. HERO SPLIT LAYOUT --- */
+    .hero-split {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* Vertically center */
+      gap: 40px;
+      margin-bottom: 60px; /* Space before socials */
+      min-height: 300px;
+
+      /* LEFT: Image Container */
+      .image-side {
+        flex: 1; /* Takes 50% width */
+        max-width: 60vw;
+        border-radius: 2px;
+        overflow: hidden;
+        border: 1px solid rgba($highlight, 0.3);
+        padding: 5px; /* Frame look */
+        
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: contain; /* Pura image dikhega */
+          filter: grayscale(20%) contrast(110%); /* Slight aesthetic filter */
+        }
+      }
+
+      /* RIGHT: Text Content */
+      .text-side {
+        flex: 1.2; /* Takes slightly more space than image */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+          font-size: 3.5rem;
+          margin: 0;
+          line-height: 1;
+          color: white;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+
+        .role {
+          font-size: 1.2rem;
+          margin: 10px 0 20px 0;
+          color: $highlight;
+          font-family: sans-serif; /* Readable font for role */
+          font-weight: 400;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        .bio {
+          font-family: sans-serif; /* Body text readable */
+          font-size: 1rem;
+          line-height: 1.8;
+          color: $text-muted;
+        }
+      }
+    }
+
+    /* --- 2. SECTIONS --- */
+    .section {
+      margin-bottom: 50px;
+
+      .section-title {
+        font-family: 'Bungee Hairline', sans-serif;
+        font-size: 2rem;
+        border-bottom: 1px solid rgba($highlight, 0.2);
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+
+    /* SOCIALS */
+    .socials-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      .social-card {
+        background: $highlight;
+        border: 1px solid rgba($highlight, 0.3);
+        padding: 15px 25px;
+        border-radius: 4px; /* Sharper corners for aesthetic look */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: black;
+        transition: all 0.3s ease;
+
+        img { width: 20px; height: 20px; filter: sepia(100%) hue-rotate(5deg); }
+        span { font-family: sans-serif; font-size: 0.9rem; letter-spacing: 1px; }
+
+        &:hover {
+          background: rgba($highlight, 0.1);
+          border-color: $highlight;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      
+      .project-card {
+        background: $card-bg;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          border-color: rgba($highlight, 0.4);
+        }
+
+        .card-img { 
+          height: 180px; 
+          background-size: cover; 
+          background-position: center; 
+          filter: grayscale(40%); /* Aesthetic muted look */
+          transition: filter 0.3s;
+        }
+        
+        &:hover .card-img { filter: grayscale(0%); }
+
+        .card-info {
+          padding: 20px;
+          
+          h4 { 
+            margin: 0 0 10px; 
+            font-size: 1.4rem; 
+            color: white; 
+            font-family: 'Bungee Hairline', sans-serif;
+          }
+          p { 
+            font-family: sans-serif; 
+            font-size: 0.9rem; 
+            color: $text-muted; 
+            line-height: 1.6; 
+            margin-bottom: 20px; 
+          }
+          
+          .tech-stack {
+            display: flex; gap: 8px; flex-wrap: wrap;
+            span { 
+              border: 1px solid rgba($highlight, 0.3);
+              color: $highlight;
+              padding: 4px 10px; 
+              font-size: 0.7rem; 
+              font-family: sans-serif;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

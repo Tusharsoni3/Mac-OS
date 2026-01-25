@@ -1,0 +1,115 @@
+.windows{
+    background: rgba(30, 30, 30, 0.7); 
+    backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%); 
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+    
+    .navbar{
+        background: #2d2d2d; 
+        height: 27px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border-bottom: 1px solid rgba(223, 214, 214, 0.3);
+        cursor: grab;
+       .title {
+   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    // macOS Aesthetics
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none; 
+    p {
+      margin: 0; 
+    }
+  }
+        .dots{
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .dot{
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+                transition: all 0.1s linear;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                cursor: default;
+        }
+        .red{
+                background-color: #ff5f56;
+        }
+        .close-icon, .minimize-icon, .full-icon {
+      pointer-events: none; 
+    }
+        .close-icon{
+            font-size: 10px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.5); 
+            opacity: 0; 
+            transition: opacity 0.15s ease; 
+            user-select: none;
+        }
+        .red:hover .close-icon{
+                opacity: 1;
+        }
+
+        .minimize-icon{
+            transform: translateY(-1px);
+            font-size: 30px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.5); 
+            opacity: 0; 
+            transition: opacity 0.15s ease; 
+            user-select: none;
+        }
+        .yellow{
+            background-color: rgb(255, 255, 52);
+        }
+        .yellow:hover .minimize-icon{
+            opacity: 1;
+        }
+
+        .full-icon{
+            transform: translateY(-1px);
+            font-size: 15px;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.5); 
+            opacity: 0; 
+            transition: opacity 0.15s ease; 
+            user-select: none;
+        }
+        .green{
+            background-color: rgb(51, 185, 51);
+        }
+        .green:hover .full-icon{
+            opacity: 1;
+        }
+    }
+
+    .main-content{
+        flex-grow: 1; 
+        height: 100%;// Take up the rest of the 320px height
+    width: 100%;
+    overflow: auto; 
+ 
+    }
+
+}

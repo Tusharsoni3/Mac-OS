@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+.calendar-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Macondo', cursive;
+  /* --- GLASSMORPHISM (The CLI Look) --- */
+  background: rgba(20, 20, 20, 0.45); /* 65% Opacity Black */
+  backdrop-filter: blur(15px);        /* Blurs the wallpaper behind it */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle glass border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Deep shadow */
+
+  /* --- 1. IMAGE SECTION (40%) --- */
+  .art-header {
+    flex: 0 0 40%; 
+    height: 40%; 
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* Add a border at bottom of image to separate from glass */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .month-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      /* Optional: Dim image slightly to match dark theme */
+      filter: brightness(0.9);
+    }
+  }
+
+  /* --- 2. GRID SECTION (60%) --- */
+  .grid-body {
+    flex: 1; 
+    height: 60%;
+    width: 100%;
+    padding: 1rem; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+    /* Remove solid background to let glass show through */
+    background: transparent; 
+
+    .lower-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem; 
+      flex-shrink: 0;
+
+      .nav-btn {
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        padding: 0 10px;
+        transition: 0.2s;
+        &:hover { color: white; transform: scale(1.1); }
+      }
+
+      .title-group {
+        text-align: center;
+        .year-label { font-size: 0.8rem; color: rgba(255,255,255,0.4); letter-spacing: 2px; }
+        .month-label { margin: 0; font-size: 1.5rem; font-weight: 700; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+      }
+    }
+
+    .weekdays-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-bottom: 0.5rem;
+      flex-shrink: 0;
+      
+      .weekday { 
+        text-align: center; 
+        color: rgba(255,255,255,0.4); /* Muted text for CLI feel */
+        font-size: 0.75rem; 
+        font-weight: 600; 
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    .dates-grid {
+      flex-grow: 1; 
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-auto-rows: 1fr; 
+      row-gap: 2px; 
+      
+      .day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        font-size: 0.95rem;
+        cursor: default;
+        width: 100%;
+        height: 100%; 
+        max-height: 40px; 
+        margin: auto;
+
+        &.today {
+          background-color: rgba(0, 122, 255, 0.8); /* Semi-transparent Blue */
+          backdrop-filter: blur(5px);
+          font-weight: 700;
+          box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+          border: 1px solid rgba(255,255,255,0.2);
+          width: 35px;
+          height: 35px;
+        }
+
+        &:hover:not(.empty) { 
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+      }
+    }
+  }
+}
